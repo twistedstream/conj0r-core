@@ -1,3 +1,4 @@
 import 'babel-polyfill';
+import Wizard from './Wizard';
 
-// more to come
+export { Wizard };

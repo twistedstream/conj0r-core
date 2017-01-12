@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && babel src -d dist",
-    "test": "babel-tape-runner \"tests/**-test.js\" | faucet"
+    "test": "babel-tape-runner \"tests/**.tests.js\" | faucet"
   },
   "repository": {
     "type": "git",
