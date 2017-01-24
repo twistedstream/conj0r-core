@@ -1,8 +1,8 @@
 import EventEmitter from 'events';
+import Gatherer from './Gatherer';
 
 // these will be imported when they are implemented
 class SpellBook { }
-class Gatherer { }
 class Realizer { }
 
 export default class Wizard extends EventEmitter {
