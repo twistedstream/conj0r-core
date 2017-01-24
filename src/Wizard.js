@@ -14,11 +14,11 @@ export default class Wizard extends EventEmitter {
     // configure default dependencies
     /* eslint-disable no-param-reassign */
     factories.spellBook = factories.spellBook ||
-      (() => new SpellBook());
+      (() => new SpellBook(options));
     factories.gatherer = factories.gatherer ||
-      (() => new Gatherer());
+      (() => new Gatherer(options));
     factories.realizer = factories.realizer ||
-      (() => new Realizer());
+      (() => new Realizer(options));
     /* eslint-enable no-param-reassign */
 
     super();
@@ -42,12 +42,12 @@ export default class Wizard extends EventEmitter {
     if (enlightenment) {
       this.emit('enlightened', enlightenment);
 
-      const gatherer = this.factories.gatherer(enlightenment);
-      gatherer.gather(enlightenment)
+      this.factories.gatherer()
+        .gather(enlightenment)
         .then((gatherings) => {
           this.emit('gathered', gatherings);
 
-          const realizer = this.factories.realizer(gatherings);
+          const realizer = this.factories.realizer();
           return realizer.realize(enlightenment, gatherings);
         })
         .then((realization) => {
