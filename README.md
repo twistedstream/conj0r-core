@@ -7,3 +7,7 @@ Auth0 automation wizardry for the masses
 ## Tests
 
 `npm test`
+
+## Sample
+
+See [sample](sample)

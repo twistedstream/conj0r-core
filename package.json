@@ -4,10 +4,10 @@
   "description": "Core engine of the conj0r Auth0 automation tool",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm run clean && babel src -d dist",
+    "build": "rimraf dist && babel src -d dist",
     "test": "babel-tape-runner \"tests/**.tests.js\" | faucet",
-    "test-debug": "babel-tape-runner \"tests/**.tests.js\""
+    "test-debug": "babel-tape-runner \"tests/**.tests.js\"",
+    "sample": "npm run build && rimraf dist_sample && babel sample -d dist_sample && node dist_sample"
   },
   "repository": {
     "type": "git",
